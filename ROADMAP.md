@@ -1,184 +1,239 @@
-# RabbitFarm – Der Gemüsehof des Hasen
-
-Projekt im Rahmen des Moduls **„Einführung in die Programmierung mit Python“**  
-Thema 6: **RabbitFarm – Der Gemüsehof des Hasen** :contentReference[oaicite:0]{index=0}
-
----
+# RabbitFarm – Der Gemüsehof des Hasen 🥕🐇
 
 ## 1. Projektüberblick
 
-Rudi, der Hase, betreibt einen nachhaltigen Gemüsehof und versorgt die Waldtiere mit frischem Gemüse.  
-Die Python-Anwendung soll u. a. folgende Aufgaben unterstützen:
+Rudi, der Hase, betreibt einen nachhaltigen Gemüsehof im Wald.  
+Die Anwendung soll ihn dabei unterstützen,
 
-- Anbauflächen verwalten (Gemüsesorten, Pflanzzeit, Erntezeitpunkt)
-- Lagerbestände überwachen (Menge, Frische, Haltbarkeit)
-- Kundenbestellungen und Abo-Kisten verwalten
-- Gewinne und Ausgaben erfassen
-- Ernteerträge visualisieren
-- Klassen für Gemüsesorten, Beete, Kunden und Lieferungen verwenden
-- Saisonale Angebote und Rezeptvorschläge bereitstellen :contentReference[oaicite:1]{index=1}
+- Anbauflächen zu planen,
+- Lagerbestände im Blick zu behalten,
+- Abo-Kisten an Waldtiere zu liefern,
+- Einnahmen und Ausgaben zu dokumentieren und
+- Ernteerträge (auch als Datenströme) effizient auszuwerten.
 
----
-
-## 2. Meilensteine (Portfoliophasen)
-
-### 2.1 Konzeption (bis 26.01.2026 – Präsentation) :contentReference[oaicite:2]{index=2}
-
-- [ ] Aufgabenstellung vollständig verstanden und abgegrenzt  
-- [ ] Grobe Projektvision formuliert  
-- [ ] Zielgruppe und Use Cases definiert  
-- [ ] **Software Requirements** (funktional & nicht-funktional) formuliert und priorisiert  
-- [ ] **Use-Case-Diagramm** / erste Skizzen erstellt (z. B. Mermaid in Markdown)  
-- [ ] Benötigte Bibliotheken / Datensätze identifiziert  
-- [ ] Konzeptdokument (3–5 Seiten) für PebblePad erstellt  
-- [ ] Foliensatz für Konzeptpräsentation fertiggestellt  
-
-### 2.2 Erarbeitung (bis 09.02.2026 – Präsentation) :contentReference[oaicite:3]{index=3}
-
-- [ ] Python-Projektstruktur angelegt (z. B. `src/`, `tests/`, `data/`, `docs/`)  
-- [ ] Minimale lauffähige App (MVP) erstellt  
-- [ ] Mindestens **2 Software Requirements** prototypisch implementiert  
-- [ ] Erste **Unit-Tests** und **Integrationstests** angelegt  
-- [ ] Erste Dokumentation im Projekt (z. B. `docs/`, Docstrings) erstellt  
-- [ ] Konzeption / Diagramme in Markdown (Mermaid/UML) integriert  
-- [ ] Foliensatz für Erarbeitungspräsentation erstellt  
-- [ ] Einarbeitungsdokumentation (Code + kurze Erläuterung) für PebblePad vorbereitet  
-
-### 2.3 Finalisierung (März 2026 – Abgabe) :contentReference[oaicite:4]{index=4}
-
-- [ ] Aufgabenstellung vollständig umgesetzt (oder klar dokumentierte Abweichungen)  
-- [ ] Vollständiger Source Code inkl. benötigter Datensätze im Repo  
-- [ ] **Developer-Wiki / Projektdokumentation** im Repo (Markdown)  
-- [ ] Vollständige **README.md** (Setup, How-to-use, Features, Known Bugs, CI-Beschreibung)  
-- [ ] **Software Requirements** final dokumentiert und auf Implementierung gemappt  
-- [ ] **Software Design** (Use-Case, ggf. Sequenz-/Klassendiagramme) dokumentiert  
-- [ ] **CI/CD-Konzept** und Testausführung dokumentiert (inkl. `requirements.txt`)  
-- [ ] Mind. beispielhafte **Unit-Tests** und **3 Integrationstests** implementiert :contentReference[oaicite:5]{index=5}  
-- [ ] 2-seitiger **Abstract / Reflexion** zur Projektdurchführung erstellt  
-- [ ] Vollständiges Portfolio in PebblePad hochgeladen  
+Zusätzlich wird ein wissenschaftlicher Fokus auf **funktionales Programmieren** und **Lazy Evaluation** gelegt:  
+Sensordaten der Beete werden als endlose Datenströme per **Generatoren** und **itertools** verarbeitet.
 
 ---
 
-## 3. Funktionen & Features (Backlog mit Checklisten)
+## 2. Wissenschaftlicher Fokus: Funktionales Programmieren & Lazy Evaluation
 
-### 3.1 Datenmodell & Klassen
-
-- [ ] Klasse `Vegetable` (Gemüsesorte, Sorte, Pflanzdatum, Erntedatum, Haltbarkeit, Menge)  
-- [ ] Klasse `Bed` (Beet: Name, Fläche, Liste von Gemüsepflanzungen)  
-- [ ] Klasse `Customer` (Kunde: Name, Adresse/Waldgebiet, Abo-Typ, Präferenzen)  
-- [ ] Klasse `Order` (Bestellung: Kunde, Inhalt der Kiste, Lieferdatum, Status)  
-- [ ] Klasse `Delivery` (Lieferung: Route, Kunde, Lieferstatus)  
-- [ ] Klasse `Farm` (zentrale Verwaltung von Beeten, Lager, Kunden, Bestellungen)  
-
-Für jede Klasse:
-
-- [ ] Attribute definiert  
-- [ ] Konstruktor und Methoden entworfen  
-- [ ] Docstrings ergänzt  
-- [ ] Mindestens ein Unit-Test pro Klasse erstellt  
+- [ ] Forschungsfrage präzisieren  
+      *„Speichereffizienz von Lazy Evaluation: Vergleich von Eager- vs. Lazy-Datenverarbeitung in Stream-Processing-Systemen.“*
+- [ ] Kurze theoretische Zusammenfassung zu:
+  - [ ] Iteratoren & Generatoren in Python
+  - [ ] Lazy vs. Eager Evaluation
+  - [ ] Relevanz für Stream Processing / Sensordaten
+- [ ] Bezug zur Anwendung herstellen:
+  - [ ] Endlose Sensordatenströme der Anbauflächen
+  - [ ] Lazy-Berechnung von Ernteerträgen und Bewässerungsplänen
+- [ ] Literaturverweis aufnehmen:
+  - [ ] *Functional Programming in Python* (David Mertz)
 
 ---
 
-### 3.2 Anbauflächen verwalten
+## 3. Ziele der Anwendung (High Level)
 
-- [ ] Funktion, um neue Beete anzulegen  
-- [ ] Funktion, um Gemüse einer Anbaufläche zuzuordnen (Pflanzzeit, geplante Erntezeit)  
-- [ ] Übersicht aller Beete mit aktuellem Anbauzustand  
-- [ ] Filter/Abfrage nach Gemüsesorte, Beet oder Erntezeitpunkt  
-
-Tests:
-
-- [ ] Unit-Tests für Beetverwaltung  
-- [ ] Integrationstest: „Beet anlegen → Gemüse pflanzen → Übersicht abrufen“  
+- [ ] Rudi kann seine **Gemüsebeete und Kulturen** planen und verwalten.
+- [ ] Der **Lagerbestand** (Menge, Frische, Haltbarkeit) wird automatisch aktualisiert.
+- [ ] **Kundenbestellungen** (Abo-Kisten) können erfasst, geplant und geliefert werden.
+- [ ] **Gewinne und Ausgaben** werden erfasst und ausgewertet.
+- [ ] **Ernteerträge** vergangener Saisons werden visualisiert (Diagramme).
+- [ ] Sensordaten werden als **endlose Streams** verarbeitet (Lazy Evaluation).
+- [ ] Die Anwendung ist gut strukturiert, getestet und dokumentiert (Portfolio-Anforderungen).
 
 ---
 
-### 3.3 Lagerbestände überwachen
+## 4. Software-Requirements (User Stories mit Checkboxes)
 
-- [ ] Datenstruktur für Lager (z. B. `Inventory`-Klasse oder Modul)  
-- [ ] Erfassung von Menge, Frische, Haltbarkeit je Gemüsesorte  
-- [ ] Funktion zum Auffüllen des Lagers nach Ernte  
-- [ ] Funktion zur Bestandsprüfung (z. B. Warnung bei zu geringer Menge oder abgelaufener Haltbarkeit)  
+### 4.1 Muss-Anforderungen (MVP)
 
-Tests:
+- [ ] **SR1 – Gemüseverwaltung**  
+  - [ ] Rudi kann Gemüsesorten anlegen, bearbeiten, löschen.  
+  - [ ] Attribute: Name, Sorte (z.B. Karotte, Salat), Pflanzdatum, voraussichtlicher Erntetermin, Beet.
 
-- [ ] Unit-Tests für Lagerlogik  
-- [ ] Integrationstest: „Ernte → Lager → Bestellung“  
+- [ ] **SR2 – Beet-Management**  
+  - [ ] Beete können angelegt werden (z.B. „Beet A“, „Tunnel 1“).  
+  - [ ] Jedem Beet können mehrere Gemüsesorten zugeordnet werden.  
+  - [ ] Übersicht: Was wächst aktuell wo?
 
----
+- [ ] **SR3 – Lagerbestände**  
+  - [ ] Ernte kann vom Beet ins Lager übernommen werden.  
+  - [ ] Attribute: Gemüsesorte, Menge (Stück / kg), Erntedatum, Haltbarkeit / Frische-Status.  
+  - [ ] Warnung / Markierung bei überschrittener Haltbarkeit.
 
-### 3.4 Kundenbestellungen & Abo-Kisten
+- [ ] **SR4 – Kunden & Abo-Kisten**  
+  - [ ] Kunden (Waldtiere) können angelegt werden (Name, Art, bevorzugtes Gemüse).  
+  - [ ] Abo-Kisten können definiert werden (z.B. wöchentlich, Inhalt, Preis).  
+  - [ ] Bestellungen werden mit Lieferdatum und Lieferstatus gespeichert.
 
-- [ ] Kundendatenverwaltung (Anlegen, Bearbeiten, Löschen)  
-- [ ] Abo-Typen definieren (z. B. „Basic-Kiste“, „Premium-Kiste“, „Karotten-only“)  
-- [ ] Bestelllogik: Erstellen / Anzeigen / Stornieren von Bestellungen  
-- [ ] Zuordnung von Gemüse aus dem Lager zu einer Bestellung  
-- [ ] Einfache „Kisten-Vorschlagslogik“ auf Basis von Kundenpräferenzen  
+- [ ] **SR5 – Einnahmen & Ausgaben**  
+  - [ ] Einnahmen aus Abo-Kisten und Einzelverkäufen erfassen.  
+  - [ ] Ausgaben für Saatgut, Dünger, Wasser etc. erfassen.  
+  - [ ] Einfacher Übersichtsbericht: Gewinn/Verlust nach Zeitraum.
 
-Tests:
+- [ ] **SR6 – Ernte-Visualisierung**  
+  - [ ] Diagramm für Ernteerträge pro Saison und Gemüsesorte erstellen  
+        (z.B. mit `matplotlib` oder einem anderen Visualisierungs-Framework).
 
-- [ ] Unit-Tests für Bestelllogik  
-- [ ] Integrationstest: „Kunde → Abo → wiederkehrende Bestellung“  
+### 4.2 Erweiterte Anforderungen (Science & Lazy Evaluation)
 
----
+- [ ] **SR7 – Sensordaten als endlose Streams**  
+  - [ ] Generatorfunktion `sensor_data_stream()` implementieren, die endlose Messwerte liefert  
+        (z.B. Bodenfeuchte, Temperatur, Sonneneinstrahlung).
+  - [ ] Verarbeitung mit `itertools` (z.B. `takewhile`, `islice`, `accumulate`), um:
+    - [ ] Bewässerungsentscheidungen lazy zu treffen  
+          (nur aktuelle/benötigte Werte im Speicher).
+    - [ ] Ernteprognosen auf Basis der letzten *n* Messwerte zu erstellen.
 
-### 3.5 Gewinne & Ausgaben
+- [ ] **SR8 – Vergleich Eager vs. Lazy**  
+  - [ ] Eager-Variante der Sensordatenverarbeitung (Liste im Speicher).  
+  - [ ] Lazy-Variante (Generator/Iterator).  
+  - [ ] Einfacher Vergleich der Speicher-/Performance-Kennzahlen  
+        (z.B. mit `sys.getsizeof`, grober Zeitvergleich).
 
-- [ ] Datenstruktur für Einnahmen (z. B. verkaufte Kisten)  
-- [ ] Datenstruktur für Ausgaben (Saatgut, Dünger, Wasser, ggf. Personal)  
-- [ ] Funktionen für einfache Gewinn- und Verlustrechnung (pro Zeitraum)  
-- [ ] Ausgabe einer kleinen Finanzübersicht (z. B. Konsole oder Datei)  
+### 4.3 Kann-Anforderungen (Nice to Have)
 
-Tests:
-
-- [ ] Unit-Tests für Berechnungslogik  
-
----
-
-### 3.6 Visualisierung der Ernteerträge
-
-- [ ] Datenaufbereitung für Ernteerträge (z. B. pro Saison, pro Gemüsesorte)  
-- [ ] Auswahl einer Visualisierungsbibliothek (z. B. `matplotlib`)  
-- [ ] Erstellung von Diagrammen (z. B. Balken- oder Liniendiagramme)  
-- [ ] Speicherung der Grafiken (z. B. `plots/`)  
-
-Tests:
-
-- [ ] Smoke-Test: Diagramm-Erzeugung ohne Fehler  
-
----
-
-### 3.7 Saisonale Angebote & Rezepte
-
-- [ ] Definition einer Datenstruktur für saisonale Angebote  
-- [ ] Logik zur Bestimmung der Saison (z. B. einfache Monatslogik)  
-- [ ] Vorschlagsfunktion für saisonale Kisten  
-- [ ] einfache Sammlung von Rezeptideen basierend auf verfügbaren Gemüsesorten  
-- [ ] Ausgabe der Vorschläge (Konsole, Datei oder einfache Textoberfläche)  
+- [ ] Rezeptvorschläge je nach Lagerbestand generieren.  
+- [ ] Saisonale Angebote („Herbstkiste“, „Vitamin-C-Woche“) automatisch erstellen.  
+- [ ] Export von Berichten als CSV/JSON.
 
 ---
 
-## 4. Technische Basis
+## 5. Domänenmodell (Klassenplanung)
 
-- [ ] Entscheidung für Python-Version (z. B. `3.11`)  
-- [ ] Anlage einer virtuellen Umgebung beschrieben (`venv` / `poetry` etc.)  
-- [ ] `requirements.txt` gepflegt (für CI/Test)  
-- [ ] Projektstruktur definiert und im README dokumentiert  
+- [ ] **Klasse `Gemuese`**
+  - [ ] Attribute: `name`, `sorte`, `pflanzdatum`, `erntedatum`, `beet_id`.
+  - [ ] Methoden: z.B. `tage_bis_ernte()`, `ist_erntebereit()`.
 
-Beispielstruktur:
+- [ ] **Klasse `Beet`**
+  - [ ] Attribute: `id`, `name`, `flaeche_m2`, Liste von `Gemuese`.
+  - [ ] Methoden: `freie_flaeche()`, `geplante_ernte()`.
 
-```text
-rabbitfarm/
-  src/
-    rabbitfarm/
-      __init__.py
-      models/
-      services/
-      ui/
-  tests/
-  data/
-  docs/
-  plots/
-  requirements.txt
-  README.md
-  PROJECT_PLAN.md
+- [ ] **Klasse `Lagerbestand` / `LagerEintrag`**
+  - [ ] Attribute: `genuese`, `menge`, `erntedatum`, `haltbar_bis`.
+  - [ ] Methoden: `ist_abgelaufen()`, `frische_score()`.
+
+- [ ] **Klasse `Kunde`**
+  - [ ] Attribute: `name`, `tierart`, `adresse`, `praeferenzen`.
+  - [ ] Methoden: `mag_gemuese(art)`.
+
+- [ ] **Klasse `Bestellung` / `AboKiste`**
+  - [ ] Attribute: `kunde`, `lieferdatum`, `inhalt`, `preis`, `status`.
+  - [ ] Methoden: `berechne_gesamtpreis()`, `markiere_geliefert()`.
+
+- [ ] **Klasse `Lieferung`**
+  - [ ] Attribute: `bestellung`, `route`, `lieferstatus`.
+  - [ ] Methoden: `starten()`, `abschliessen()`.
+
+- [ ] **Klasse `Hof`**
+  - [ ] Aggregiert Beete, Lager, Kunden, Bestellungen, Finanzen.  
+  - [ ] Methoden: zentrale API für CLI/GUI.
+
+- [ ] **Klasse `SensorStream` / Generatorfunktionen**
+  - [ ] Funktion/Objekt, das endlose Datenströme für Beete liefert.  
+  - [ ] Filter-/Map-Funktionen im funktionalen Stil.
+
+---
+
+## 6. Technische Planung
+
+- [ ] **Projektstruktur definieren**
+  - [ ] `src/rabbitfarm/__init__.py`
+  - [ ] `src/rabbitfarm/models/` (Domänenklassen)
+  - [ ] `src/rabbitfarm/services/` (z.B. Bestelllogik, Lagerlogik)
+  - [ ] `src/rabbitfarm/streams/` (Generatoren, Lazy Evaluation)
+  - [ ] `tests/` (Unit- & Integrationstests)
+  - [ ] `data/` (Beispieldaten, ggf. CSV/JSON)
+
+- [ ] **Einfache Benutzeroberfläche wählen**
+  - [ ] Entscheidung: CLI-Menü, TUI, oder einfache Web-Variante (z.B. `Flask`).
+  - [ ] MVP: Menübasierte CLI (Textbasiert).
+
+- [ ] **Datenhaltung**
+  - [ ] Entscheidung: In-Memory + JSON-Dateien / CSV als Persistenz.  
+  - [ ] Optional: SQLite-DB.
+
+---
+
+## 7. Tests
+
+- [ ] **Unit-Tests**
+  - [ ] Für zentrale Domänenklassen (z.B. `Gemuese`, `Beet`, `LagerEintrag`, `Bestellung`).
+  - [ ] Tests für Generatorfunktionen (z.B. erste *n* Sensordaten prüfen).
+
+- [ ] **Integrationstests (mind. 3)**
+  - [ ] Test 1: „Vom Beet ins Lager“ – Pflanzung → Ernte → Lagerbestand.  
+  - [ ] Test 2: „Abo-Kiste“ – Erstellung Bestellung → Lager wird korrekt reduziert.  
+  - [ ] Test 3: „Lazy Stream“ – Sensordaten-Stream → Bewässerungsentscheidungen.
+
+- [ ] **Test-Setup**
+  - [ ] `pytest` einrichten.
+  - [ ] Testdaten / Fixtures anlegen.
+
+---
+
+## 8. Dokumentation
+
+- [ ] **README.md**
+  - [ ] Projektbeschreibung (Story + Fachteil).
+  - [ ] Installationsanleitung (Python-Version, virtuelles Environment).
+  - [ ] `requirements.txt` / `pyproject.toml` dokumentieren.
+  - [ ] How-To-Use (Beispiele für typische Workflows).
+
+- [ ] **Developer-Dokumentation (Markdown im Repo)**
+  - [ ] Software Requirements (dieses Dokument verlinken).  
+  - [ ] Architekturübersicht (Domänenmodell, wichtige Module).  
+  - [ ] Sequenz-/Use-Case-Diagramme (Mermaid o.Ä.) für typische Abläufe:
+    - [ ] Bestellung einer Abo-Kiste
+    - [ ] Verarbeitung von Sensordaten (Lazy Stream)
+
+- [ ] **Wissenschaftlicher Teil**
+  - [ ] Kurzes Kapitel zur Forschungsfrage & Methodik.  
+  - [ ] Beschreibung Eager vs. Lazy in der eigenen Implementierung.  
+  - [ ] Kurze Diskussion von Ergebnissen (z.B. Speichervergleich).
+
+---
+
+## 9. CI / Tooling
+
+- [ ] `requirements.txt` anlegen (oder `pyproject.toml`).
+- [ ] Linting / Formatierung:
+  - [ ] `flake8` oder `ruff`.
+  - [ ] `black` oder `autopep8`.
+- [ ] Automatisierte Tests:
+  - [ ] `pytest` in CI-Pipeline integrieren.
+- [ ] (Optional) GitHub Actions / GitLab CI:
+  - [ ] Job: Setup Python
+  - [ ] Job: Install requirements
+  - [ ] Job: Lint
+  - [ ] Job: Tests
+
+---
+
+## 10. Zeitplanung (Portfolio-Phasen)
+
+> **Konzeptionsphase**
+- [ ] Anforderungen finalisieren (dieses Dokument).  
+- [ ] Grobes Domänenmodell als Skizze/Mermaid-Diagramm.  
+- [ ] Konzept-Präsentation vorbereiten.
+
+> **Erarbeitungsphase**
+- [ ] Minimale lauffähige App (MVP) implementieren.  
+- [ ] Mindestens 2 Software-Requirements vollständig umgesetzt.  
+- [ ] Erste Tests & Dokumentation im Projekt.
+
+> **Finalisierungsphase**
+- [ ] Alle geplanten Features (so weit möglich) implementieren.  
+- [ ] Testsuite vollständig.  
+- [ ] Dokumentation + wissenschaftlicher Teil final.  
+- [ ] Projekt-Reflexion (Abstract) schreiben.
+
+---
+
+## 11. Offene Punkte / Ideen
+
+- [ ] Konkrete Beispielkunden & -rezepte ausarbeiten (Storytelling).  
+- [ ] Saisonale Events (z.B. „Karottenfestival“, „Salatwoche“).  
+- [ ] Erweiterung um einfache Weboberfläche.  
+- [ ] Optionale Export-/Importfunktionen für Daten (Backup).
